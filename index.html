@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistem Pemberatan Tugas Guru — SMK Seri Pagi</title>
+<meta name="description" content="Sistem Pemberatan Tugas Guru SMK Seri Pagi. Dibina oleh Cikgu Muhammad Hazziq bin Yahaya, Guru Data SMK Seri Pagi.">
+<meta name="theme-color" content="#5b1426">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235b1426'/%3E%3Cpath d='M32 12l6 12.4 13.6 2-9.8 9.6 2.3 13.5L32 43.1l-12.1 6.4 2.3-13.5-9.8-9.6 13.6-2z' fill='%23e8cf7a'/%3E%3C/svg%3E">
+<style>
+  html,body{margin:0;height:100%;background:#f6f3ef;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+  #app{position:fixed;inset:0;width:100%;height:100%;border:0;display:block}
+  #muat{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    background:linear-gradient(135deg,#22060d 0%,#46101d 42%,#6e1a2d 100%);color:#fff;transition:opacity .4s;z-index:2;text-align:center;padding:20px}
+  #muat.hilang{opacity:0;pointer-events:none}
+  .spin{width:46px;height:46px;border:4px solid rgba(255,255,255,.2);border-top-color:#e8cf7a;border-radius:50%;animation:sp .8s linear infinite}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  #muat h1{margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:22px;letter-spacing:.3px}
+  #muat p{margin:0;opacity:.8;font-size:13px}
+  #muat a{color:#e8cf7a;font-weight:700}
+  #lambat{display:none}
+  .kredit{position:absolute;bottom:18px;font-size:11.5px;opacity:.7}
+</style>
+</head>
+<body>
+<div id="muat">
+  <div class="spin"></div>
+  <h1>Sistem Pemberatan Tugas Guru</h1>
+  <p>SMK Seri Pagi • Sedang memuatkan…</p>
+  <p id="lambat">Lambat memuatkan? <a id="pautanTerus" href="#" target="_top">Buka sistem terus</a></p>
+  <div class="kredit">Dibina oleh Cikgu Muhammad Hazziq bin Yahaya • Guru Data SMK Seri Pagi</div>
+</div>
+<iframe id="app" title="Sistem Pemberatan Tugas Guru" allow="clipboard-write; fullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<script>
+  /* ============================================================
+   *  TUKAR BARIS DI BAWAH: tampal "Web app URL" anda (berakhir /exec)
+   * ============================================================ */
+  var WEB_APP_URL = 'https://script.google.com/macros/s/TAMPAL_ID_WEB_APP_ANDA_DI_SINI/exec';
+
+  var f = document.getElementById('app'), m = document.getElementById('muat');
+  document.getElementById('pautanTerus').href = WEB_APP_URL;
+  f.onload = function () { setTimeout(function () { m.classList.add('hilang'); }, 300); };
+  f.src = WEB_APP_URL;
+  setTimeout(function () { document.getElementById('lambat').style.display = 'block'; }, 12000);
+</script>
+</body>
+</html>
